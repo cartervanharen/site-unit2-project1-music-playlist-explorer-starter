@@ -115,3 +115,16 @@ header{
   transform: translateY(-50%);
   
 }
+
+
+
+
+
+
+.songitemcard{
+    background-color: lightgray; 
+    border-radius: 10px; 
+    display: flex;
+    align-items: center; 
+    padding: 10px;
+}
