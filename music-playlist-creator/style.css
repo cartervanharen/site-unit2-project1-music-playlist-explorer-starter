@@ -17,11 +17,15 @@ header {
 
 #playlistgrid {
   display: flex;
+
   flex-wrap: wrap;
+  margin: auto;
+
   justify-content: center; 
 }
 
 .playlistitems {
+  
   background-color: #6699cc;
   width: 300px;
   padding: 30px;
@@ -31,7 +35,7 @@ header {
 }
 
 .overlay {
-  display: hidden;
+  display: none;
   position: fixed;
   top: 0;
   opacity: 60%;
@@ -41,7 +45,7 @@ header {
   background-color: black;
 }
 #modal {
-  display: hidden;
+  display: none;
   position: fixed;
   height: 800px;
 
