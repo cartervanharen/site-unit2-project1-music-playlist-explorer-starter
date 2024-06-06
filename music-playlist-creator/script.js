@@ -2,22 +2,37 @@ import { data } from "./data/data.js";
 //  location.reload();
 
 // console.log(data);
+
+
+
+
+
+
+
 window.onload = function () {
   data.playlists.forEach((playlist, index) => {
     playlist.likeCount = 0;
 
     const sectionHtml = `
-    <section id="${playlist.playlistID}" class="playlistitems">
-      <img src="${playlist.playlist_art}" style="width: 300px; height: 300px; border-radius: 10px;">
-      <h1>${playlist.playlist_name}</h1>
-      <p>Created by ${playlist.playlist_creator}</p>
-      <div style="display: flex; align-items: center; padding=12px">
-        <img id="likeButton${index}" src="./assets/img/likebutton.png" style="padding= 4px; width: 30px; height: 30px;">
-        <span id="likeCount${index}">${playlist.likeCount}</span>
-      </div>
-    </section>
-    `;
 
+
+  <section id="${playlist.playlistID}" class="playlistitems">
+
+  <div style="position: relative;">
+  <div id="deleteList${index}" style="font-size: 20pt; color: black; position: absolute; top: -50px; right: -25px; z-index: 1;">
+  <p>X</p>
+</div>
+
+    <img src="${playlist.playlist_art}" style="width: 300px; height: 300px; border-radius: 10px;">
+    <h1>${playlist.playlist_name}</h1>
+    <p>Created by ${playlist.playlist_creator}</p>
+    <div style="display: flex; align-items: center; padding: 12px;">
+      <img id="likeButton${index}" src="./assets/img/likebutton.png" style="padding: 4px; width: 30px; height: 30px;">
+      <span id="likeCount${index}">${playlist.likeCount}</span>
+    </div>
+  </section>
+</div>
+`;
     const playlistGrid = document.getElementById("playlistgrid");
     const sectionElement = document.createElement("div"); 
     sectionElement.innerHTML = sectionHtml;
@@ -38,8 +53,35 @@ window.onload = function () {
       playlist.likeCount++;
       likeCountDisplay.textContent = playlist.likeCount;
     });
+
+
+
+
+
+    //STRETCH GOAL BELOW
+  const deleteButton = document.getElementById(`deleteList${index}`);
+  deleteButton.addEventListener('click', (event) => {
+    event.stopPropagation();
+    console.log("Delete button clicked, event propagation stopped.");
+    sectionElement.remove(); 
+    //STRETCH GOAL ABOVE
+
+
+
+
+
   });
+  });
+
+
+
+
+
+
+
 };
+
+
 
 
 const closemodal = document.getElementById("closemodal");
