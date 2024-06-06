@@ -148,6 +148,19 @@ header {
   padding: 10px;
 }
 
+
+.songitemcard2 {
+  background-color: white;
+  border-radius: 10px;
+  border-width: 2pt;
+  border-color: black;
+  display: flex;
+  align-items: center;
+  margin: 15pt;
+  border-style: solid;
+  padding: 10px;
+}
+
 .colorchange{
   background: linear-gradient(45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
   background-size: 400% 400%;
@@ -189,7 +202,7 @@ header {
 
 
 .featbody{
-  padding: 30pt;
+  padding: 5pt;
   color: black;
   border-radius: 15px;
 
