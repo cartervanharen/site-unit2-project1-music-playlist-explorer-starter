@@ -105,6 +105,20 @@ header {
   background-color: #0091ff;
 }
 
+
+.goodbutton{
+  border-radius: 4px;
+  padding: 4pt;
+  padding-left: 20px;
+
+  padding-right: 20px;
+  font-family: "Helvetica";
+  font-size: 20pt;
+  border: none; 
+  color: white;
+  background-color: #0091ff;
+}
+
 .scroll-container {
   overflow-y: auto; 
   max-height: 470px; 
@@ -145,6 +159,20 @@ header {
   color: white;
   font-family: Arial, sans-serif;
 }
+
+
+
+.colorchange2{
+  background: linear-gradient(45deg, #e63cd5, #5736ff, #38e084, #86ed26);
+  background-size: 400% 400%;
+  animation: gradientBG 10s ease infinite;
+  height: 100vh;
+  margin: 0;
+
+
+  color: white;
+  font-family: Arial, sans-serif;
+}
 @keyframes gradientBG {
   0% {
       background-position: 0% 50%;
@@ -158,3 +186,13 @@ header {
 }
 
 
+
+
+.featbody{
+  padding: 30pt;
+  color: black;
+  border-radius: 15px;
+
+  margin: 30pt;
+  background-color: white;
+}

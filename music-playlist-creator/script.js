@@ -1,15 +1,19 @@
 import { data } from "./data/data.js";
 
 // console.log(data);
-
 window.onload = function () {
   data.playlists.forEach((playlist, index) => {
+    playlist.likeCount = 0;
+
     const sectionHtml = `
     <section id="${playlist.playlistID}" class="playlistitems">
       <img src="${playlist.playlist_art}" style="width: 300px; height: 300px; border-radius: 10px;">
       <h1>${playlist.playlist_name}</h1>
       <p>Created by ${playlist.playlist_creator}</p>
-      <img id="likeButton${index}" src="./assets/img/likebutton.png" style="width: 30px; height: 30px;">
+      <div style="display: flex; align-items: center; ">
+        <img id="likeButton${index}" src="./assets/img/likebutton.png" style="padding= 4px; width: 30px; height: 30px;">
+        <span id="likeCount${index}">${playlist.likeCount}</span>
+      </div>
     </section>
     `;
 
@@ -23,14 +27,15 @@ window.onload = function () {
     openmodal.addEventListener("click", () => fillsongs(playlist.playlistID, index));
 
     const likeButton = document.getElementById(`likeButton${index}`);
+    const likeCountDisplay = document.getElementById(`likeCount${index}`);
     likeButton.addEventListener('click', (event) => {
       event.stopPropagation(); 
       console.log("Like button clicked for playlist:", playlist.playlistID);
-      if (likeButton.src.includes("likebutton.png")) {
+      if (playlist.likeCount === 0) {
           likeButton.src = "./assets/img/likebutton2.png";
-      } else {
-          likeButton.src = "./assets/img/likebutton.png";
       }
+      playlist.likeCount++;
+      likeCountDisplay.textContent = playlist.likeCount;
     });
   });
 };
@@ -168,3 +173,11 @@ function fillsongs(playlistId) {
     displayDiv.innerHTML += songCard;
   });
 }
+
+
+
+
+
+
+
+

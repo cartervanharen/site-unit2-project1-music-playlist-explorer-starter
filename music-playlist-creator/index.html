@@ -12,6 +12,8 @@
   <body class="colorchange">
     <header>
       <h1>Music Player Explorer</h1>
+      <button class="goodbutton" onclick="openFeaturedPage()">View Featured Playlist</button>
+
     </header>
 
     <main>
@@ -80,7 +82,7 @@
     
     <footer style="background-color: lightgray; text-align: center; padding: 2;">
           <h1>Created by Carter VanHaren</h1>
-  
+
     </footer>
 
 
@@ -88,3 +90,9 @@
     <script type="module" src="script.js"></script>
   </body>
 </html>
+
+<script>
+    function openFeaturedPage() {
+        window.location.href = 'featured.html'; 
+    }
+    </script>
