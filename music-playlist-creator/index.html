@@ -1,117 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>Music Playlist Explorer</title>
-    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
-    
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <header>
-        <h1>Music Player Explorer</h1>
+      <h1>Music Player Explorer</h1>
     </header>
 
+    <main>
+      <div id="playlistgrid">
+        <section id="playlist1" class="playlistitems">
+          <img
+            src="./assets/img/playlist.png"
+            style="width: 300px; height: 300px; border-radius: 10px"
+          />
+          <h1>Late Night Drive</h1>
+          <p>Created by Melody Maven</p>
+          <img
+            src="./assets/img/likebutton.png"
+            style="width: 30px; height: 30px"
+          />
+        </section>
+      </div>
 
-    <main> 
-        
-        <div id="playlistgrid">
+      <div id="overlay"></div>
 
+      <div id="modal">
+        <div class="modal-content">
+          <div id="topmodal">
+            <div style="display: flex">
+              <img
+                id="imgplayinmodel"
+                src="./assets/img/playlist.png"
+                style="
+                  width: 180px;
+                  height: 180px;
+                  border-radius: 10px;
+                  margin-right: auto;
+                "
+              />
 
-            <section id="playlist1" class="playlistitems">
-                <img src="./assets/img/playlist.png" style="width: 300px; height: 300px; border-radius: 10px;">
-                <h1>Late Night Drive</h1>
-                <p>Created by Melody Maven</p>
-                <img src="./assets/img/likebutton.png" style="width: 30px; height: 30px;">
-            </section>
-        
-
-
-        </div>
-
-
-
-
-
-
-
-        <div class="overlay"></div>
-
-        <div id="modal">
-            <div class="modal-content">
-                <div id="topmodal">
-                    <div style="display: flex;">
-
-                        <img id="imgplayinmodel" src="./assets/img/playlist.png" style="width: 180px; height: 180px; border-radius: 10px; margin-right: auto;">
-                        
-                        <div>
-                            <h1 style="padding-left: 20px; font-size: 22pt;">That Summer '16 Feeling</h1>
-                            <p style="padding-left: 20px; color: gray;">Created by Groovev Gaurdian</p>
-                        </div>
-
-
-
-                    </div>
-        
-                    <div id="shufflebuttondiv">
-
-                        <Button id="shuttlebutton">Shuffle</Button>   
-
-                    </div>
-
-                </div>
-
-
-                <div>
-
-                   
-                    <div class="scroll-container">
-                        <ul class="scroll-list">
-
-
-
-                            <li class="songitemcard">
-                                <div style="flex: 0 0 auto; margin-right: 20px; border-radius: 10px;">
-                                    <img src="./assets/img/song.png" style="border-radius: 10px; width: 120px; height: 120px; padding-left: 10px;">
-                                </div>
-                                <div style="flex: 1; text-align: left;">
-                                    <h1>One Dance</h1>
-                                    <p>Drake</p>
-                                    <p>Views</p>
-                                </div>
-                                <div style="flex: 0 0 auto; text-align: right; align-self: center;">
-                                    <p>2:53</p>
-                                </div>
-
-
-                            </li>
-                            
-
-
-
-
-
-
-                        </ul>
-                    </div>
-
-
-                </div>
-
-        
+              <div>
+                <h1 style="padding-left: 20px; font-size: 22pt">
+                  That Summer '16 Feeling
+                </h1>
+                <p style="padding-left: 20px; color: gray">
+                  Created by Groovev Gaurdian
+                </p>
+              </div>
             </div>
-        
+
+            <div id="shufflebuttondiv">
+              <button id="shuttlebutton">Shuffle</button>
+            </div>
+          </div>
+
+          <div>
+            <div class="scroll-container">
+              <ul class="scroll-list">
+                <li class="songitemcard">
+                  <div
+                    style="
+                      flex: 0 0 auto;
+                      margin-right: 20px;
+                      border-radius: 10px;
+                    "
+                  >
+                    <img
+                      src="./assets/img/song.png"
+                      style="
+                        border-radius: 10px;
+                        width: 120px;
+                        height: 120px;
+                        padding-left: 10px;
+                      "
+                    />
+                  </div>
+                  <div style="flex: 1; text-align: left">
+                    <h1>One Dance</h1>
+                    <p>Drake</p>
+                    <p>Views</p>
+                  </div>
+                  <div
+                    style="
+                      flex: 0 0 auto;
+                      text-align: right;
+                      align-self: center;
+                    "
+                  >
+                    <p>2:53</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
+      </div>
     </main>
 
     <footer>
-        <!-- Your footer content here -->
+      <!-- Your footer content here -->
     </footer>
     <script type="module" src="data/data.js"></script>
     <script type="module" src="script.js"></script>
-
-
-</body>
+  </body>
 </html>

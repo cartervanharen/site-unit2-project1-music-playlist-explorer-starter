@@ -1,48 +1,71 @@
-console.log("test1");
 
 import { data } from "./data/data.js";
 
-console.log(data);
+// console.log(data);
 
-console.log("test");
 
 window.onload = function () {
+
   const playlistGrid = document.getElementById("playlistgrid");
   data.playlists.forEach((playlist, index) => {
-    const section = document.createElement("section");
-    section.className = "playlistitems";
-    section.id = `playlist_name${index + 1}`;
-    const imgPlaylist = document.createElement("img");
-    imgPlaylist.src = playlist.playlist_art;
-    imgPlaylist.style = "width: 300px; height: 300px; border-radius: 10px;";
-    const title = document.createElement("h1");
-    title.textContent = playlist.playlist_name;
-    const creator = document.createElement("p");
-    creator.textContent = `Created by ${playlist.playlist_creator}`;
-    const imgLike = document.createElement("img");
-    imgLike.src = "./assets/img/likebutton.png";
-    imgLike.style = "width: 30px; height: 30px;";
-    imgLike.addEventListener("click", () => showModal());
-    section.appendChild(imgPlaylist);
-    section.appendChild(title);
-    section.appendChild(creator);
-    section.appendChild(imgLike);
-    playlistGrid.appendChild(section);
+
+
+
+    // console.log(playlist.playlist_art);
+    // console.log(data.playlists[index].playlist_art);
+
+    const sectionHtml = `
+    <section id="${playlist.playlistID}" class="playlistitems">
+      <img src="${playlist.playlist_art}" style="width: 300px; height: 300px; border-radius: 10px;">
+      <h1>${playlist.playlist_name}</h1>
+      <p>Created by ${playlist.playlist_creator}</p>
+      <img src="./assets/img/likebutton.png" style="width: 30px; height: 30px;">
+    </section>
+  `;
+
+
+    const sectionElement = document.createElement("playlistitems");
+    sectionElement.innerHTML = sectionHtml;
+    playlistGrid.appendChild(sectionElement);
+
+
+
+
+
+    const openmodal = document.getElementById("playlistgrid");
+    openmodal.addEventListener("click", () => showmodal(playlist.playlistID));
+
+
+
   });
+
+
+
+
+
+
+  
+
+
 };
 
 
-const moda1 = document.getElementById("modal");
-const overlay1 = document.getElementsByClassName("overlay")[0]; // get the first element with class "overlay"
 
 
-const studyButton = document.getElementById("playlistgrid");
-studyButton.addEventListener("click", () => showmodal());
+function showmodal(playlistID) {
+
+  const modal = document.getElementById("modal");
+  const overlay = document.getElementById("overlay");
 
 
-function showmodal() {
-  moda1.style.display = "block";
-  overlay1.style.display = "block";
+  modal.style.display = "block";
+  overlay.style.display = "block";
+
+
+
+  
+
+  
 }
 
 
