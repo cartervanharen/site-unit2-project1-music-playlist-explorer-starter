@@ -1,4 +1,5 @@
 import { data } from "./data/data.js";
+//  location.reload();
 
 // console.log(data);
 window.onload = function () {
@@ -10,7 +11,7 @@ window.onload = function () {
       <img src="${playlist.playlist_art}" style="width: 300px; height: 300px; border-radius: 10px;">
       <h1>${playlist.playlist_name}</h1>
       <p>Created by ${playlist.playlist_creator}</p>
-      <div style="display: flex; align-items: center; ">
+      <div style="display: flex; align-items: center; padding=12px">
         <img id="likeButton${index}" src="./assets/img/likebutton.png" style="padding= 4px; width: 30px; height: 30px;">
         <span id="likeCount${index}">${playlist.likeCount}</span>
       </div>
