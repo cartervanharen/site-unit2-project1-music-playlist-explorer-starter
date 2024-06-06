@@ -59,12 +59,12 @@ function showmodal(playlistID) {
   const displayDiv = document.getElementById("codegoeshere");
 
   displayDiv.innerHTML = `
-    <div id="topmodal">
+    <div class="fullopac" id="topmodal">
       <div style="display: inline-flex; align-items: center;">
         <img
           id="imgplayinmodel"
           src="${data.playlists[playlistID].playlist_art}"
-          style="width: 180px; height: 180px; border-radius: 10px; margin-right: auto; margin-bottom: 10px;"
+          style="  opacity: 100%;  width: 180px; height: 180px; border-radius: 10px; margin-right: auto; margin-bottom: 10px;"
         />
         <div style="padding-left: 10px;">
           <h1 style="font-size: 22pt">${data.playlists[playlistID].playlist_name}</h1>
@@ -82,9 +82,10 @@ function showmodal(playlistID) {
     </div>
   `;
 
+
   document.getElementById("shufflebutton").addEventListener("click", () => shuffleSongs(playlistID));
   
-  fillsongs(playlistID);
+  fillsongs(playlistID); 
 }
 
 function shuffleSongs(playlistID) {
@@ -97,7 +98,7 @@ function shuffleSongs(playlistID) {
   }
   
   const displayDiv = document.getElementById("cardsgohere");
-  displayDiv.innerHTML = ''; 
+  displayDiv.innerHTML = '';
   
   songsArray.forEach((song) => {
     const songCard = `
