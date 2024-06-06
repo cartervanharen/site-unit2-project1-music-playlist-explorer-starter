@@ -17,7 +17,7 @@ header {
 
 #playlistgrid {
   display: flex;
-
+  justify-content: left;
   flex-wrap: wrap;
   margin: auto;
 
@@ -25,14 +25,31 @@ header {
 }
 
 .playlistitems {
-  
   background-color: #6699cc;
   width: 300px;
   padding: 30px;
   margin: 10px;
   border-radius: 10px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  transition: all 0.2s ease; /* Add transition for smooth animation */
 }
+
+.playlistitems:hover {
+  background-size: 100% 100%, auto;
+  background-repeat: no-repeat, repeat;
+  background-position: center, top left;
+  transform: scale(1.05); /* Scale up slightly on hover */
+}
+
+
+
+
+
+
+
+
+
+
 
 #overlay {
   display: none;
@@ -111,3 +128,4 @@ header {
   align-items: center;
   padding: 10px;
 }
+

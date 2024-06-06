@@ -22,32 +22,27 @@ window.onload = function () {
     sectionElement.innerHTML = sectionHtml;
     playlistGrid.appendChild(sectionElement);
 
-    const openmodal = document.getElementById("playlistgrid");
-    openmodal.addEventListener("click", () => showmodal(playlist.playlistID));
+    const openmodal = document.getElementById(playlist.playlistID);
+
+    openmodal.addEventListener("click", () =>
+      showmodal(playlist.playlistID, index)
+    );
+    openmodal.addEventListener("click", () =>
+      fillsongs(playlist.playlistID, index)
+    );
   });
-
-
-
-  
-
 };
 
 const closemodal = document.getElementById("closemodal");
 closemodal.addEventListener("click", () => closethemodal());
 
-
-function closethemodal(){
-
+function closethemodal() {
   const modal = document.getElementById("modal");
   const overlay = document.getElementById("overlay");
 
   modal.style.display = "none";
   overlay.style.display = "none";
-
 }
-
-
-
 
 function showmodal(playlistID) {
   const modal = document.getElementById("modal");
@@ -56,82 +51,99 @@ function showmodal(playlistID) {
   modal.style.display = "block";
   overlay.style.display = "block";
 
+  const displayDiv = document.getElementById("codegoeshere");
 
- const displayDiv = document.getElementById("codegoeshere");
-
-  displayDiv.innerHTML = "<p>test</p>"
   displayDiv.innerHTML = `
 
   <div id="topmodal">
-  <div style="display: flex; align-items: center; justify-content: space-between;">
-      <img
-          id="imgplayinmodel"
-          src="./assets/img/playlist.png"
-          style="
-            width: 180px;
-            height: 180px;
-            border-radius: 10px;
-            margin-right: auto;
-          "
-      />
-      <div>
-          <h1 style="padding-left: 20px; font-size: 22pt">
-              That Summer '16 Feeling
-          </h1>
-          <p style="padding-left: 20px; color: gray">
-              Created by Groovev Gaurdian
-          </p>
-      </div>
-  </div>
 
-<div id="shufflebuttondiv">
+  <div style="display: inline-flex; align-items: center;">
+  <img
+      id="imgplayinmodel"
+      src="${data.playlists[playlistID].playlist_art}"
+      style="
+        width: 180px;
+        height: 180px;
+        border-radius: 10px;
+        margin-right: auto;
+        margin-bottom: 10px; /* Add some bottom margin to separate the image from the header text */
+      "
+  />
+  <div style="padding-left: 10px;">
+      <h1 style="font-size: 22pt">
+          ${data.playlists[playlistID].playlist_name}
+      </h1>
+      <p style="color: gray">
+          Created by ${data.playlists[playlistID].playlist_creator}
+      </p>
+  </div>
+</div>
+
+
+
+  
+<div style="  padding-bottom: 15px;" id="shufflebuttondiv">
 <button id="shuttlebutton">Shuffle</button>
 </div>
 </div>
 
 <div>
 <div class="scroll-container">
-<ul class="scroll-list">
-  <li class="songitemcard">
-    <div
-      style="
-        flex: 0 0 auto;
-        margin-right: 20px;
-        border-radius: 10px;
-      "
-    >
-      <img
-        src="./assets/img/song.png"
-        style="
-          border-radius: 10px;
-          width: 120px;
-          height: 120px;
-          padding-left: 10px;
-        "
-      />
-    </div>
-    <div style="flex: 1; text-align: left">
-      <h1>One Dance</h1>
-      <p>Drake</p>
-      <p>Views</p>
-    </div>
-    <div
-      style="
-        flex: 0 0 auto;
-        text-align: right;
-        align-self: center;
-      "
-    >
-      <p>2:53</p>
-    </div>
-  </li>
+<ul id="cardsgohere" class="scroll-list">
+
+
 </ul>
 </div>
 </div>
 
-
-
-
 `;
+}
 
+function fillsongs(playlistId) {
+  const playlist = data.playlists.find(
+    (pl) => pl.playlistID === parseInt(playlistId)
+  );
+
+  const displayDiv = document.getElementById("cardsgohere");
+
+  playlist.songs.forEach((song) => {
+    const songCard = `
+      <li style="padding-top: 10px;" class="songitemcard">
+        <div
+          style="
+            flex: 0 0 auto;
+            margin-right: 20px;
+            border-radius: 10px;
+          "
+        >
+          <img
+            src="${song.cover_art}"
+            style="
+              border-radius: 10px;
+              width: 120px;
+              height: 120px;
+              padding-left: 10px;
+            "
+          />
+        </div>
+        
+        <div style="flex: 1; text-align: left">
+          <h1>${song.title}</h1>
+          <p>${song.artist}</p>
+          <p>${song.album}</p>
+        </div>
+        
+        <div
+          style="
+            flex: 0 0 auto;
+            text-align: right;
+            align-self: center;
+          "
+        >
+          <p>${song.duration}</p>
+        </div>
+      </li>`;
+
+    displayDiv.innerHTML += songCard;
+  });
 }
