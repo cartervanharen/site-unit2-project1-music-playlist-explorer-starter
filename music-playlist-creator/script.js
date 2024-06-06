@@ -4,34 +4,37 @@ import { data } from "./data/data.js";
 
 window.onload = function () {
   data.playlists.forEach((playlist, index) => {
-    // console.log(playlist.playlist_art);
-    // console.log(data.playlists[index].playlist_art);
-
     const sectionHtml = `
     <section id="${playlist.playlistID}" class="playlistitems">
       <img src="${playlist.playlist_art}" style="width: 300px; height: 300px; border-radius: 10px;">
       <h1>${playlist.playlist_name}</h1>
       <p>Created by ${playlist.playlist_creator}</p>
-      <img src="./assets/img/likebutton.png" style="width: 30px; height: 30px;">
+      <img id="likeButton${index}" src="./assets/img/likebutton.png" style="width: 30px; height: 30px;">
     </section>
-  `;
+    `;
 
     const playlistGrid = document.getElementById("playlistgrid");
-
-    const sectionElement = document.createElement("playlistitems");
+    const sectionElement = document.createElement("div"); // Changed from "playlistitems" to "div"
     sectionElement.innerHTML = sectionHtml;
     playlistGrid.appendChild(sectionElement);
 
     const openmodal = document.getElementById(playlist.playlistID);
+    openmodal.addEventListener("click", () => showmodal(playlist.playlistID, index));
+    openmodal.addEventListener("click", () => fillsongs(playlist.playlistID, index));
 
-    openmodal.addEventListener("click", () =>
-      showmodal(playlist.playlistID, index)
-    );
-    openmodal.addEventListener("click", () =>
-      fillsongs(playlist.playlistID, index)
-    );
+    const likeButton = document.getElementById(`likeButton${index}`);
+    likeButton.addEventListener('click', (event) => {
+      event.stopPropagation(); // Prevents the modal from opening when the like button is clicked
+      console.log("Like button clicked for playlist:", playlist.playlistID);
+      if (likeButton.src.includes("likebutton.png")) {
+          likeButton.src = "./assets/img/likebutton2.png";
+      } else {
+          likeButton.src = "./assets/img/likebutton.png";
+      }
+    });
   });
 };
+
 
 const closemodal = document.getElementById("closemodal");
 closemodal.addEventListener("click", () => closethemodal());
@@ -122,7 +125,7 @@ function fillsongs(playlistId) {
               border-radius: 10px;
               width: 120px;
               height: 120px;
-              padding-left: 10px;
+              margin-left: 10px;
             "
           />
         </div>
