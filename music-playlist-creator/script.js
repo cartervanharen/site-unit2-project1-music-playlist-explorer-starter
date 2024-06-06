@@ -1,16 +1,10 @@
-
 import { data } from "./data/data.js";
 
 // console.log(data);
 
-
 window.onload = function () {
-
   const playlistGrid = document.getElementById("playlistgrid");
   data.playlists.forEach((playlist, index) => {
-
-
-
     // console.log(playlist.playlist_art);
     // console.log(data.playlists[index].playlist_art);
 
@@ -23,49 +17,19 @@ window.onload = function () {
     </section>
   `;
 
-
     const sectionElement = document.createElement("playlistitems");
     sectionElement.innerHTML = sectionHtml;
     playlistGrid.appendChild(sectionElement);
 
-
-
-
-
     const openmodal = document.getElementById("playlistgrid");
     openmodal.addEventListener("click", () => showmodal(playlist.playlistID));
-
-
-
   });
-
-
-
-
-
-
-  
-
-
 };
 
-
-
-
 function showmodal(playlistID) {
-
   const modal = document.getElementById("modal");
   const overlay = document.getElementById("overlay");
 
-
   modal.style.display = "block";
   overlay.style.display = "block";
-
-
-
-  
-
-  
 }
-
-
