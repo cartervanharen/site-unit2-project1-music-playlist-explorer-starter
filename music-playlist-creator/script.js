@@ -7,8 +7,6 @@ import { data } from "./data/data.js";
 
 
 
-
-
 window.onload = function () {
   data.playlists.forEach((playlist, index) => {
     playlist.likeCount = 0;
@@ -19,15 +17,15 @@ window.onload = function () {
   <section id="${playlist.playlistID}" class="playlistitems">
 
   <div style="position: relative;">
-  <div id="deleteList${index}" style="font-size: 20pt; color: black; position: absolute; top: -50px; right: -25px; z-index: 1;">
+  <div class="deletelistclass" id="deleteList${index}">
   <p>X</p>
 </div>
 
-    <img src="${playlist.playlist_art}" style="width: 300px; height: 300px; border-radius: 10px;">
+    <img class="plistfart" src="${playlist.playlist_art}" >
     <h1>${playlist.playlist_name}</h1>
     <p>Created by ${playlist.playlist_creator}</p>
-    <div style="display: flex; align-items: center; padding: 12px;">
-      <img id="likeButton${index}" src="./assets/img/likebutton.png" style="padding: 4px; width: 30px; height: 30px;">
+    <div class=pplistdiv">
+      <img class=likebuttonlike id="likeButton${index}" src="./assets/img/likebutton.png">
       <span id="likeCount${index}">${playlist.likeCount}</span>
     </div>
   </section>
@@ -46,7 +44,6 @@ window.onload = function () {
     const likeCountDisplay = document.getElementById(`likeCount${index}`);
     likeButton.addEventListener('click', (event) => {
       event.stopPropagation(); 
-      console.log("Like button clicked for playlist:", playlist.playlistID);
       if (playlist.likeCount === 0) {
           likeButton.src = "./assets/img/likebutton2.png";
       }
@@ -109,11 +106,7 @@ function showmodal(playlistID) {
   displayDiv.innerHTML = `
     <div class="fullopac" id="topmodal">
       <div style="display: inline-flex; align-items: center;">
-        <img
-          id="imgplayinmodel"
-          src="${data.playlists[playlistID].playlist_art}"
-          style="  opacity: 100%;  width: 180px; height: 180px; border-radius: 10px; margin-right: auto; margin-bottom: 10px;"
-        />
+        <img id="imgplayinmodel" class=plistart1 src="${data.playlists[playlistID].playlist_art}"/>
         <div style="padding-left: 10px;">
           <h1 style="font-size: 22pt">${data.playlists[playlistID].playlist_name}</h1>
           <p style="color: gray">Created by ${data.playlists[playlistID].playlist_creator}</p>
@@ -149,20 +142,8 @@ function shuffleSongs(playlistID) {
   displayDiv.innerHTML = '';
   
   songsArray.forEach((song) => {
-    const songCard = `
-      <li style="padding-top: 10px;" class="songitemcard">
-        <div style="flex: 0 0 auto; margin-right: 20px; border-radius: 10px;">
-          <img src="${song.cover_art}" style="border-radius: 10px; width: 120px; height: 120px; margin-left: 10px;" />
-        </div>
-        <div style="flex: 1; text-align: left">
-          <h1>${song.title}</h1>
-          <p>${song.artist}</p>
-          <p>${song.album}</p>
-        </div>
-        <div style="flex: 0 0 auto; text-align: right; align-self: center;">
-          <p>${song.duration}</p>
-        </div>
-      </li>`;
+    const songCard =makecard(song.cover_art,song.title,song.artist,song.album,song.duration);
+
     displayDiv.innerHTML += songCard;
   });
 }
@@ -176,49 +157,32 @@ function fillsongs(playlistId) {
   const displayDiv = document.getElementById("cardsgohere");
 
   playlist.songs.forEach((song) => {
-    const songCard = `
-      <li style="padding-top: 10px;" class="songitemcard">
-        <div
-          style="
-            flex: 0 0 auto;
-            margin-right: 20px;
-            border-radius: 10px;
-          "
-        >
-          <img
-            src="${song.cover_art}"
-            style="
-              border-radius: 10px;
-              width: 120px;
-              height: 120px;
-              margin-left: 10px;
-            "
-          />
-        </div>
-        
-        <div style="flex: 1; text-align: left">
-          <h1>${song.title}</h1>
-          <p>${song.artist}</p>
-          <p>${song.album}</p>
-        </div>
-        
-        <div
-          style="
-            flex: 0 0 auto;
-            text-align: right;
-            align-self: center;
-          "
-        >
-          <p>${song.duration}</p>
-        </div>
-      </li>`;
+    const songCard =makecard(song.cover_art,song.title,song.artist,song.album,song.duration);
 
+
+
+      
     displayDiv.innerHTML += songCard;
   });
 }
 
 
 
+function makecard(art, title,artist, album, duration){
 
-
-
+  return `
+  <li style="padding-top: 10px;" class="songitemcard">
+    <div style="flex: 0 0 auto; margin-right: 20px; border-radius: 10px;">
+      <img src="${art}" style="border-radius: 10px; width: 120px; height: 120px; margin-left: 10px;" />
+    </div>
+    <div style="flex: 1; text-align: left">
+      <h1>${title}</h1>
+      <p>${artist}</p>
+      <p>${album}</p>
+    </div>
+    <div style="flex: 0 0 auto; text-align: right; align-self: center;">
+      <p>${duration}</p>
+    </div>
+  </li>`;
+  
+}

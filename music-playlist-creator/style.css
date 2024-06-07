@@ -234,12 +234,10 @@ header {
   border: none;
   cursor: pointer;
 }
-/* Container needed to position the dropdown content */
 .dropdown {
   position: relative;
   display: inline-block;
 }
-/* Dropdown Content (Hidden by Default) */
 .dropdown-content {
   display: none;
   position: absolute;
@@ -248,12 +246,54 @@ header {
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
 }
-/* Links inside the dropdown */
 .dropdown-content a {
   color: black;
   padding: 12px 16px;
   text-decoration: none;
   display: block;
 }
-/* Change color of dropdown links on hover */
 .dropdown-content a:hover {background-color: #f1f1f1}
+
+
+.deletelistclass{
+  font-size: 20pt;
+  color: black;
+  position: absolute;
+  top: -50px; 
+  right: -25px;
+  z-index: 1
+
+}
+
+
+.plistfart{
+
+  width: 300px;
+  height: 300px;
+  border-radius: 10px;
+}
+
+
+.pplistdiv{
+  display: flex; align-items: center; padding: 12px;
+
+
+}
+
+.likebuttonlike{
+
+
+  padding: 4px; width: 30px; height: 30px;
+}
+
+
+
+.plistart1{
+
+
+ opacity: 100%;  width: 180px; height: 180px; border-radius: 10px; margin-right: auto; margin-bottom: 10px;
+
+
+}
+
+
