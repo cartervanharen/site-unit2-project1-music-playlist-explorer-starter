@@ -26,7 +26,7 @@ function makeplaylistcard(playid, index, art, playname, creator, likecount) {
 
 var indexcount = 10000;
 
-function makemanualplaylist(playid, art, playname, creator, likecount) {
+function makemanualplaylist(playid, art, playname, creator, likecount) {//THIS DOESN'T WORK, WAS SUPPOSED TO LET YOU ADD NEW PLAYLIST
   let index = indexcount;
   indexcount++;
 
