@@ -3,7 +3,7 @@
 Submitted by: **Carter VanHaren**
 
 Estimated time spent: **15** hours spent in total
-
+NOTE: GITHUB WON'T LET ME MAKE THIS PRIVATE
 ### Application Features
 
 #### CORE FEATURES
