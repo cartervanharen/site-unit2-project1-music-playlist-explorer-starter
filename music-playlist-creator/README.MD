@@ -55,7 +55,12 @@ Estimated time spent: **15** hours spent in total
 ### Walkthrough Video
 
 
-`https://drive.google.com/file/d/1Ekbz0XeDh3XHaXHBdPxtzbkMZirDVTaZ/view?usp=sharing`
+`
+
+<a href="https://drive.google.com/file/d/1Ekbz0XeDh3XHaXHBdPxtzbkMZirDVTaZ/view?usp=sharing">
+   <p>Project video title</p>
+   <img style="max-width:300px;" src="https://drive.google.com/file/d/1Ekbz0XeDh3XHaXHBdPxtzbkMZirDVTaZ/view?usp=sharing">
+</a>`
 
 ### Reflection
 
