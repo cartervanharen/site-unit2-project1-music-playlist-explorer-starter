@@ -57,6 +57,9 @@ Estimated time spent: **15** hours spent in total
 ![Feature Text](https://github.com/cartervanharen/site-unit2-project1-music-playlist-explorer-starter/blob/b76c2f62c5629050cbcf35b859033013f46f5cf0/music-playlist-creator/Screen%20Recording%202024-06-07%20at%206.45.00%E2%80%AFPM.gif)
 
 
+If thats too blurry, you can view here: https://drive.google.com/file/d/1Ekbz0XeDh3XHaXHBdPxtzbkMZirDVTaZ/view?usp=sharing
+
+
 ### Reflection
 
 * Did the topics discussed in your labs prepare you to complete the assignment? Be specific, which features in your weekly assignment did you feel unprepared to complete?
