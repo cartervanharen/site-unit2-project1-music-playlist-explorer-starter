@@ -259,7 +259,13 @@ function makesongcard(art, title, artist, album, duration) {
 //makesongcard("a","a","a","a","a");
 
 document.getElementById("searchBox").addEventListener("input", function () {
+  console.log(this.value)
+
+
+
+
   var searchQuery = this.value;
+
   if (searchQuery.length > 0) {
     handleSearch(searchQuery);
   }
@@ -285,6 +291,9 @@ function handleSearch(query) {
       playlist.playlist_creator,
       playlist.likeCount
     );
+
+
+    
     const sectionElement = document.createElement("div");
     sectionElement.innerHTML = sectionHtml;
     playlistGrid.appendChild(sectionElement);
