@@ -189,7 +189,7 @@ function showmodal(playlistID) {
     .getElementById("shufflebutton")
     .addEventListener("click", () => shuffleSongs(playlistID));
 
-  fillsongs(playlistID);
+//  fillsongs(playlistID);
 }
 
 function shuffleSongs(playlistID) {
