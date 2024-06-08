@@ -54,7 +54,9 @@ Estimated time spent: **15** hours spent in total
 
 ### Walkthrough Video
 
-```<iframe src="https://fb-my.sharepoint.com/personal/cartervanharen_meta_com/_layouts/15/embed.aspx?UniqueId=642cac46-5990-48d8-9ea6-8d7e7a4a49f1&embed=%7B%22ust%22%3Atrue%2C%22hv%22%3A%22CopyEmbedCode%22%7D&referrer=StreamWebApp&referrerScenario=EmbedDialog.Create" width="640" height="360" frameborder="0" scrolling="no" allowfullscreen title="Screen Recording 2024-06-07 at 6.45.00 PM.mov"></iframe>
+![Feature Text](https://github.com/cartervanharen/site-unit2-project1-music-playlist-explorer-starter/blob/b76c2f62c5629050cbcf35b859033013f46f5cf0/music-playlist-creator/Screen%20Recording%202024-06-07%20at%206.45.00%E2%80%AFPM.gif)
+
+
 ### Reflection
 
 * Did the topics discussed in your labs prepare you to complete the assignment? Be specific, which features in your weekly assignment did you feel unprepared to complete?
