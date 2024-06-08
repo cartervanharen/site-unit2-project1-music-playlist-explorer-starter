@@ -105,6 +105,7 @@ header {
   background-color: #0091ff;
 }
 
+/* general use buttons, i stand by that name/ */
 
 .goodbutton{
   border-radius: 4px;
@@ -119,8 +120,8 @@ header {
   background-color: #0091ff;
 }
 
-
-.goodbutton2{
+/* general use buttons, i stand by that name/ */
+.goodbutton2{ 
   margin: 4px;
   border-radius: 4px;
   padding: 4pt;
@@ -189,6 +190,7 @@ header {
 }
 
 
+/* second variation/ */
 
 .colorchange2{
   background: linear-gradient(45deg, #e63cd5, #5736ff, #38e084, #86ed26);
