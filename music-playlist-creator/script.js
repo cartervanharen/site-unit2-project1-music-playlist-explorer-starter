@@ -302,6 +302,11 @@ function showsorted(playlist, sectionElement, index) {
 
   const likeButton = document.getElementById(`likeButton${index}`);
   const likeCountDisplay = document.getElementById(`likeCount${index}`);
+
+  if (playlist.likeCount > 0){
+    likeButton.src = "./assets/img/likebutton2.png";
+
+  }
   likeButton.addEventListener("click", (event) => {
     event.stopPropagation();
     playlist.likeCount++;
