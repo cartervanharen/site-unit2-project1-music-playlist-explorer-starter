@@ -55,12 +55,9 @@ Estimated time spent: **15** hours spent in total
 ### Walkthrough Video
 
 
-`
+` <iframe src="https://fb-my.sharepoint.com/personal/cartervanharen_meta_com/_layouts/15/embed.aspx?UniqueId=642cac46-5990-48d8-9ea6-8d7e7a4a49f1&embed=%7B%22ust%22%3Atrue%2C%22hv%22%3A%22CopyEmbedCode%22%7D&referrer=StreamWebApp&referrerScenario=EmbedDialog.Create" width="640" height="360" frameborder="0" scrolling="no" allowfullscreen title="Screen Recording 2024-06-07 at 6.45.00 PM.mov"></iframe>`
 
-<a href="https://drive.google.com/file/d/1Ekbz0XeDh3XHaXHBdPxtzbkMZirDVTaZ/view?usp=sharing">
-   <p>Project video title</p>
-   <img style="max-width:300px;" src="https://drive.google.com/file/d/1Ekbz0XeDh3XHaXHBdPxtzbkMZirDVTaZ/view?usp=sharing">
-</a>`
+
 
 ### Reflection
 
