@@ -60,6 +60,13 @@ NOTE: GITHUB WON'T LET ME MAKE THIS PRIVATE
 If thats too blurry, you can view here: https://drive.google.com/file/d/1Ekbz0XeDh3XHaXHBdPxtzbkMZirDVTaZ/view?usp=sharing
 
 
+UPDATED 6.9.24 TO ADD LOOM VIDEO EMBED
+
+<a href="https://www.loom.com/share/61d832e2e77142308bf69326b67ad351">
+   <p>Project video title</p>
+   <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/61d832e2e77142308bf69326b67ad351-with-play.gif">
+</a>
+
 ### Reflection
 
 * Did the topics discussed in your labs prepare you to complete the assignment? Be specific, which features in your weekly assignment did you feel unprepared to complete?
